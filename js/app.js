@@ -47,18 +47,40 @@ function Game() {
 
     this.moveFurry = function () {
         this.hideVisibleFurry();
-        if(this.furry.direction === 'right'){
+        if(this.furry.direction === 'right') {
             this.furry.x += 1;
-        } else if(this.furry.direction === 'left'){
+        }  if(this.furry.direction === 'left') {
             this.furry.x -= 1;
-        } else if(this.furry.direction === 'up') {
-            this.furry.y += 1;
-        } else {
+        }  if(this.furry.direction === 'up') {
             this.furry.y -= 1;
+        }  if(this.furry.direction === 'down') {
+            this.furry.y += 1;
         }
         this.showFurry();
     }
+
+    this.turnFurry = function (event) {
+        switch (event.which) {
+            case 37:
+                this.furry.direction = 'left';
+                break;
+            case 38:
+                this.furry.direction = 'up';
+                break;
+            case 39:
+                this.furry.direction = 'right';
+                break;
+            case 40:
+                this.furry.direction = 'down';
+                break;
+        }
+    }
+    document.addEventListener('keydown', function(event){
+        console.log(_this);
+        _this.turnFurry(event);
+    });
 }
+
 
 
 document.addEventListener("DOMContentLoaded", function() {

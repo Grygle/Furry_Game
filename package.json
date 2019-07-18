@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/Grygle/Furry_Game#readme",
   "devDependencies": {
-    "webpack": "^4.36.1",
-    "webpack-cli": "^2.1.5"
+
+    "webpack": "^4.16.3",
+    "webpack-cli": "^3.3.6"
+
   }
 }
